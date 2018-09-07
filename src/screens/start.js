@@ -18,6 +18,7 @@ class Start {
         //创建角色
         this.player = new Player();
         this.player.init();
+        this.player.role.reset(900,2200);
 
         //创建摇杆
         this.rocker = new Rocker();
