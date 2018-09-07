@@ -12,7 +12,8 @@ class GameMain {
     preload(game){
         //选择不同角色开始游戏
         game.load.image('gameBg',require('./assets/sprites/map/2.jpg'));
-
+        game.load.spritesheet("touch", require("./assets/sprites/tool/touch.png"),64,64);
+        game.load.spritesheet("roleNoviceMan", require("./assets/sprites/role/noviceMan.png"),74,120,96);
         //加载资源进度条
         let progressText = game.add.text(game.world.centerX, game.world.centerY, '0%', {
             fontSize: '60px',
@@ -43,8 +44,9 @@ class GameMain {
 window.onload = ()=>{
     window.userData = {};
     //创建游戏
-    window.game = new GameMain().init(760,960);
+    window.game = new GameMain().init(960,740);
 
     //添加游戏场景
     game.state.add('start', new Start());
 }
+
